@@ -1,0 +1,6 @@
+$baseColor: #fa0;
+$docWidth: 375;
+
+@function rem($px) {
+  @return 7.5 / $docWidth * $px + rem;
+}

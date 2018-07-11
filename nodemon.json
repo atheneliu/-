@@ -1,0 +1,24 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules",
+    "test/",
+    ".idea/",
+    "docs/",
+    "migrations/",
+    "coverage/",
+    "scripts/",
+    "seeds"
+  ],
+  "verbose": true,
+  "watch": [
+    "www/",
+    "config/",
+    "./index.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js"
+}
