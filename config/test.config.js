@@ -2,7 +2,7 @@ let path = require('path')
 
 module.exports = {
   env: { NODE_ENV: '"test"' },
-  port: 8080,
+  port: 9856,
   apiDomain: 'localhost:8060',
   index: path.resolve(__dirname, '../dist/index.html'),
   assetsRoot: path.resolve(__dirname, '../dist'),

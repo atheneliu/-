@@ -6,7 +6,9 @@
 ``` bash
 # install dependencies
 npm install
-
+#可能出现的错误 Failed at the phantomjs-prebuilt@2.1.13 install script 'node install.js'
+解决：npm install phantomjs-prebuilt@2.1.13 --ignore-scripts
+     npm install
 # serve with hot reload at localhost:8080
 npm run start
 

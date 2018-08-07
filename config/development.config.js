@@ -1,7 +1,7 @@
 
 module.exports = {
   env: { NODE_ENV: '"development"' },
-  port: 8080,
+  port: 9856,
   assetsSubDirectory: 'static',
   assetsPublicPath: '/',
   apiDomain: 'localhost:8060',
