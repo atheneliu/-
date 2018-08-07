@@ -10,3 +10,4 @@ selenium-debug.log
 *.iml
 .idea/
 target/
+.vscode/
