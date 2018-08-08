@@ -57,40 +57,20 @@
         </div>
       </div>
     </section>
-    <footer>
-      <div class="foot_icon">
-        <img class="icon" />
-        <span class="font">首页</span>
-      </div>
-      <div class="foot_icon">
-        <img class="icon" />
-        <span class="font">在线答题</span>
-      </div>
-      <div class="foot_icon">
-        <img class="icon" />
-        <span class="font">查看结果</span>
-      </div>
-      <div class="foot_icon">
-        <img class="icon" />
-        <span class="font">错题本</span>
-      </div>
-      <div class="foot_icon">
-        <img class="icon" />
-        <span class="font">精题本</span>
-      </div>
-      <div class="foot_icon">
-        <img class="icon" />
-        <span class="font">个人信息</span>
-      </div>
-    </footer>
+    <Footer :index="1"/>
   </div>
 </template>
 
 <script>
+  import Footer from '@/zhubanwang/components/Footer'
+
   export default {
     name: 'StudentHome',
     data() {
       return {}
+    },
+    components: {
+      Footer,
     },
     methods: {
     },

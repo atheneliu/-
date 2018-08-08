@@ -2,7 +2,6 @@ const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const StyleLintPlugin = require('stylelint-webpack-plugin')
 const config = require('../config')
 const appPackage = require('../package.json')
 const baseWebpackConfig = require('./webpack.base.conf')
@@ -22,10 +21,6 @@ module.exports = merge(baseWebpackConfig, {
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
   plugins: [
-    new StyleLintPlugin({
-      configFile: path.resolve(__dirname, '..', '.stylelintrc'),
-      files: ['./src/**/*.vue', './src/**/*.scss'],
-    }),
     new webpack.DefinePlugin({
       'process.env': config.env
     }),

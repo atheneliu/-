@@ -1,3 +1,3 @@
 module.exports = {
-  pages: ['basic'],
+  pages: ['zhubanwang'],
 }

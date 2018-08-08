@@ -29,24 +29,30 @@ const actionTypePlugin = {
 }
 
 const Home = () => import('../pages/Home')
+const StudentHome = () => import('../pages/StudentHome')
 const Counter = () => import('../pages/Counter')
 const Temp = () => import('../pages/Temp')
+
 
 Vue.use(Router)
 Vue.use(actionTypePlugin)
 
 const routes = [{
-  path: '/basic',
+  path: '/zhubanwang',
   name: 'Home',
   component: Home,
 }, {
-  path: '/basic/counter',
+  path: '/zhubanwang/counter',
   name: 'Counter',
   component: Counter,
 }, {
-  path: '/basic/temp',
+  path: '/zhubanwang/temp',
   name: 'Temp',
   component: Temp,
+}, {
+  path: '/zhubanwang/student',
+  name: 'StudentHome',
+  component: StudentHome,
 }]
 
 export default new Router({
