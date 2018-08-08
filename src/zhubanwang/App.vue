@@ -51,6 +51,10 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-overflow-scrolling: touch;
   }
+
+  div,p,section {
+    box-sizing: border-box;
+  }
 </style>
 
 <style lang="scss" scoped>
