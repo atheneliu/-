@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="right">
-      <img :src="icon" alt="icon" class="news" :style="{ height: iconHeight, width: iconWidth }">
+      <img :src="icon" alt="icon" class="news">
       <span class="title">{{title}}</span>
     </div>
     <div class="left">
@@ -16,7 +16,7 @@
     name: 'SectionHeader',
     props: {
       title: { type: String },
-      icon: { type: Object },
+      icon: { type: String },
     },
   }
 </script>

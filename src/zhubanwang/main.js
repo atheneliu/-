@@ -5,6 +5,8 @@ import 'animate.css/animate.min.css'
 import 'vue-ydui/dist/ydui.base.css'
 import { Button } from 'vue-ydui/dist/lib.rem/button'
 import { CellGroup, CellItem } from 'vue-ydui/dist/lib.rem/cell'
+import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog'
+import { Layout } from 'vue-ydui/dist/lib.rem/layout'
 import FastClick from 'fastclick'
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
@@ -19,6 +21,16 @@ sync(store, router)
 Vue.component(Button.name, Button)
 Vue.component(CellGroup.name, CellGroup)
 Vue.component(CellItem.name, CellItem)
+Vue.component(Layout.name, Layout)
+
+Vue.prototype.$dialog = {
+  confirm: Confirm,
+  alert: Alert,
+  toast: Toast,
+  notify: Notify,
+  loading: Loading,
+}
+Vue.$dialog = Vue.prototype.$dialog
 
 new Vue({
   el: '#app',

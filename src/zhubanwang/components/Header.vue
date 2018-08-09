@@ -4,9 +4,9 @@
       <img src="https://www.xingshulin.com/common/images/logo.svg" alt="驻班网" class="icon">
       <div class="con">
         <div class="user">
-          <img :src="userPic" alt="头像" class="user-pic">
-          <span class="name-font">{{userName}}</span>
-          <span class="font">{{`（${userGrade}级 ${userClass}班）`}}</span>
+          <img :src="userInfo.userPic" alt="头像" class="user-pic">
+          <span class="name-font">{{userInfo.userName}}</span>
+          <span class="font">{{`（${userInfo.userGrade}级 ${userInfo.userClass}班）`}}</span>
         </div>
         <div class="phone">
           <img src="../images/phone.png" alt="phone" class="phone-icon">
@@ -28,10 +28,12 @@
   export default {
     name: 'Header',
     props: {
-      userName: { type: String },
-      userPic: { type: String },
-      userClass: { type: String },
-      userGrade: { type: String },
+      userInfo: {
+        userName: { type: String },
+        userPic: { type: String },
+        userClass: { type: String },
+        userGrade: { type: String },
+      },
     },
     data() {
       return {

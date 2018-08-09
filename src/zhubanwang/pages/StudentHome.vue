@@ -1,39 +1,45 @@
 <template>
   <div class="student-home">
-    <Header userName="杨家路" userGrade="2014" userClass="5" userPic="https://www.xingshulin.com/img/vip_team.png"/>
-    <div class="banner">
-    </div>
-    <!-- <section class="list">
-      <section-header title="图文模块一" :icon="sectionHeaderIcon" />
-      <div class="scroll-list">
-        <div class="scroll-list-item">
-          <SectionItemScroll v-for="(item,index) in firstList" :key="index" :itemInfo="item" />
-        </div>
+    <yd-layout>
+      <Header :userInfo="userInfo" slot="navbar" />
+      <div class="banner">
       </div>
-    </section>  -->
-    <section class="list-con mb20">
-      <section-header title="图文咨询模块一" :icon="sectionHeaderIcon" />
-      <div class="list">
-        <div class="list-item" v-for="(item,index) in firstList" :key="index">
-          <SectionItem :itemInfo="item" />
-        </div>
-      </div>
-    </section>
+      <section class="list-con mb20">
+        <section-header title="图文模块一" :icon="sectionHeaderIcon" />
+        <vue-seamless-scroll :data="scrollList" :class-option="classOption5" class="seamless-warp">
+          <div class="scroll-list clearfix">
+            <div class="scroll-list-item" v-for="(item,index) in scrollList" :key="index">
+              <SectionItemScroll :itemInfo="item" />
+            </div>
+          </div>
+        </vue-seamless-scroll>
+      </section> 
 
-    <section class="list-con mb180">
-      <section-header title="图文咨询模块一" :icon="sectionHeaderIcon" />
-      <div class="list">
-        <div class="list-item" v-for="(item,index) in firstList" :key="index">
-          <SectionItem :itemInfo="item" />
+      <section class="list-con mb20">
+        <section-header title="图文咨询模块一" :icon="sectionHeaderIcon" />
+        <div class="list mt10">
+          <div class="list-item-wrapper" v-for="(item,index) in firstList" :key="index">
+            <SectionItem :itemInfo="item" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <Footer :index="1"/>
+      <section class="list-con mb30">
+        <section-header title="图文咨询模块一" :icon="sectionHeaderIcon" />
+        <div class="list mt10">
+          <div class="list-item-wrapper" v-for="(item,index) in firstList" :key="index">
+            <SectionItem :itemInfo="item" />
+          </div>
+        </div>
+      </section>
+
+      <Footer :index="1" slot="tabbar" />
+    </yd-layout>
   </div>
 </template>
 
 <script>
+  import vueSeamlessScroll from 'vue-seamless-scroll'
   import Footer from '@/zhubanwang/components/Footer'
   import Header from '@/zhubanwang/components/Header'
   import SectionHeader from '@/zhubanwang/components/SectionHeader'
@@ -46,33 +52,71 @@
     data() {
       return {
         sectionHeaderIcon,
+        userInfo: {
+          userName: '杨家路',
+          userGrade: '2014',
+          userClass: '5',
+          userPic: 'https://www.xingshulin.com/img/vip_team.png',
+        },
         firstList: [
           {
             dateTime: '2017-05-06',
             readCount: '1189',
-            title: '时间的八十多把精神病的萨达',
+            title: '时间的八十多把精神病的萨达1',
             subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你',
             picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
           {
             dateTime: '2017-05-06',
             readCount: '1189',
-            title: '时间的八十多把精神病的萨达',
+            title: '时间的八十多把精神病的萨达2',
             subTitle: '那是你的事建安大叔大叔呢暗示可能打开是',
             picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
           {
             dateTime: '2017-05-06',
             readCount: '1189',
-            title: '时间的八十多把精神病的萨达',
+            title: '时间的八十多把精神病的萨达3',
             subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的',
             picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
           {
             dateTime: '2017-05-06',
             readCount: '1189',
-            title: '时间的八十多把精神病的萨达',
+            title: '时间的八十多把精神病的萨达4',
             subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
+          },
+        ],
+        scrollList: [
+          {
+            dateTime: '2017-05-06',
+            readCount: '1189',
+            title: '时间的八十多把精神病的萨达1',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
+          },
+          {
+            dateTime: '2017-05-06',
+            readCount: '1189',
+            title: '时间的八十多把精神病的萨达2',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
+          },
+          {
+            dateTime: '2017-05-06',
+            readCount: '1189',
+            title: '时间的八十多把精神病的萨达3',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
+          },
+          {
+            dateTime: '2017-05-06',
+            readCount: '1189',
+            title: '时间的八十多把精神病的萨达4',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
+          },
+          {
+            dateTime: '2017-05-06',
+            readCount: '1189',
+            title: '时间的八十多把精神病的萨达5',
             picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
         ],
@@ -84,8 +128,16 @@
       SectionHeader,
       SectionItem,
       SectionItemScroll,
+      vueSeamlessScroll,
     },
     methods: {
+    },
+    computed: {
+      classOption5() {
+        return {
+          direction: 2,
+        }
+      },
     },
   }
 </script>
@@ -93,8 +145,47 @@
 <style lang="scss" scoped>
   @import '../theme';
 
-  .mb180 {
-    margin-bottom: rem(180);
+  .mt10 {
+    margin-top: rem(10);
+  }
+
+  .yd-flexview{
+    max-width: 100%;
+  }
+
+  .yd-scrollview {
+    margin-bottom: rem(40);
+    padding-bottom: rem(50);
+  }
+
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
+  .scroll-list {
+    width: rem(1300);
+  }
+
+  .scroll-list-item {
+    width: rem(240);
+    margin: rem(20) 0 rem(20) rem(20);
+    float: left;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+  }
+
+  .seamless-warp {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .mb30 {
+    margin-bottom: rem(30);
   }
 
   .mb20 {
@@ -106,18 +197,20 @@
   }
 
   .list-con {
-    // display: flex;
     padding: rem(20) rem(25);
     background: #fff;
   }
   
-  .list-item {
-    width: 47.5%;
-    margin-bottom: rem(20);
-    margin-right: rem(20);
+  .list-item-wrapper {
+    width: rem(420);
+    margin: rem(10) rem(0);
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
     border-radius: 7px;
     display: inline-block;
+  }
+
+  .list-item-wrapper:nth-of-type(odd) {
+    margin-right: rem(20);
   }
 
 </style>
