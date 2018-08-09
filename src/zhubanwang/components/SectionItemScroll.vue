@@ -3,7 +3,6 @@
     <img :src="itemInfo.picUrl" alt="pic" class="pic">
     <div class="font">
       <p class="title">{{itemInfo.title}}</p>
-      <p class="subtitle">{{itemInfo.subTitle}}</p>
       <Eye :dateTime="itemInfo.dateTime" :readCount="itemInfo.readCount"/>
     </div>
   </div>
@@ -19,7 +18,6 @@ export default {
       dateTime: { type: String },
       readCount: { type: Number },
       title: { type: String },
-      subTitle: { type: String },
       picUrl: { type: String },
     },
   },
@@ -35,31 +33,20 @@ export default {
   .list-item {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
   }
 
   .pic {
-    width: rem(130);
-    height: rem(120);
-  }
-
-  .font {
-    height: rem(120);
-    padding: rem(14);
-    width: 100%;
+    width: rem(240);
+    height: rem(150);
+    margin-bottom: rem(10);
   }
 
   .title {
     color: rgb(51,51,51);
     font-size: 16px;
     margin-bottom: rem(15);
-  }
-
-  .subtitle {
-    color: rgb(153,153,153);
-    font-size: 14px;
-    margin-bottom: rem(20);
   }
 </style>
 

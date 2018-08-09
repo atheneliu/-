@@ -75,10 +75,16 @@
 
  footer {
     width: 100%;
-    height: rem(60);
+    height: rem(120);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: #fff;
+    padding: rem(14) 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top: 0.5px solid rgba(0,0,0,0.2);
 
     .foot_icon {
       display: flex;

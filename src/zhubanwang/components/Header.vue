@@ -54,6 +54,7 @@
     padding: rem(12) rem(15);
     justify-content: space-between;
     align-items: center;
+    background: #fff;
   }
 
   .icon {

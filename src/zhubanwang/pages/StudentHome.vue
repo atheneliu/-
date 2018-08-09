@@ -1,33 +1,34 @@
 <template>
   <div class="student-home">
-    <Header userName="杨家路" userGrade="2014" userClass="5" userPic="https://www.xingshulin.com/images/expert/zq.png"/>
-    <div class="banner"></div>
-    <section class="list">
+    <Header userName="杨家路" userGrade="2014" userClass="5" userPic="https://www.xingshulin.com/img/vip_team.png"/>
+    <div class="banner">
+    </div>
+    <!-- <section class="list">
       <section-header title="图文模块一" :icon="sectionHeaderIcon" />
-      <div class="con">
-        <div class="list-item">
-          <img src="" alt="" class="pic">
-          <div class="font">
-            <p class="title">当我还纳闷的时候，冥王星里打了</p>
-            <div class="foot">
-              <span class="date">2017-01-01</span>
-              <div class="eye">
-                <img src="" alt="" class="eye">
-                <span class="num">1136</span>
-              </div>
-            </div>
-          </div>
+      <div class="scroll-list">
+        <div class="scroll-list-item">
+          <SectionItemScroll v-for="(item,index) in firstList" :key="index" :itemInfo="item" />
         </div>
       </div>
-    </section>
-    <section class="list-con">
+    </section>  -->
+    <section class="list-con mb20">
       <section-header title="图文咨询模块一" :icon="sectionHeaderIcon" />
       <div class="list">
-        <div class="list-item">
-          <SectionItem v-for="(item,index) in firstList" :key="index" :itemInfo="item" />
+        <div class="list-item" v-for="(item,index) in firstList" :key="index">
+          <SectionItem :itemInfo="item" />
         </div>
       </div>
     </section>
+
+    <section class="list-con mb180">
+      <section-header title="图文咨询模块一" :icon="sectionHeaderIcon" />
+      <div class="list">
+        <div class="list-item" v-for="(item,index) in firstList" :key="index">
+          <SectionItem :itemInfo="item" />
+        </div>
+      </div>
+    </section>
+
     <Footer :index="1"/>
   </div>
 </template>
@@ -37,6 +38,7 @@
   import Header from '@/zhubanwang/components/Header'
   import SectionHeader from '@/zhubanwang/components/SectionHeader'
   import SectionItem from '@/zhubanwang/components/SectionItem'
+  import SectionItemScroll from '@/zhubanwang/components/SectionItemScroll'
   import sectionHeaderIcon from '../images/news.png'
 
   export default {
@@ -49,29 +51,29 @@
             dateTime: '2017-05-06',
             readCount: '1189',
             title: '时间的八十多把精神病的萨达',
-            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的蓝色阿森纳迪士尼打算考到哪蓝色的三大神三大开始打',
-            picUrl: 'https://www.xingshulin.com/images/expert/lxg.png',
+            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
           {
             dateTime: '2017-05-06',
             readCount: '1189',
             title: '时间的八十多把精神病的萨达',
-            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的蓝色阿森纳迪士尼打算考到哪蓝色的三大神三大开始打',
-            picUrl: 'https://www.xingshulin.com/images/expert/lxg.png',
+            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
           {
             dateTime: '2017-05-06',
             readCount: '1189',
             title: '时间的八十多把精神病的萨达',
-            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的蓝色阿森纳迪士尼打算考到哪蓝色的三大神三大开始打',
-            picUrl: 'https://www.xingshulin.com/images/expert/lxg.png',
+            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
           {
             dateTime: '2017-05-06',
             readCount: '1189',
             title: '时间的八十多把精神病的萨达',
-            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的蓝色阿森纳迪士尼打算考到哪蓝色的三大神三大开始打',
-            picUrl: 'https://www.xingshulin.com/images/expert/lxg.png',
+            subTitle: '那是你的事建安大叔大叔呢暗示可能打开是你的',
+            picUrl: 'https://www.xingshulin.com/img/vip_team.png',
           },
         ],
       }
@@ -81,6 +83,7 @@
       Header,
       SectionHeader,
       SectionItem,
+      SectionItemScroll,
     },
     methods: {
     },
@@ -90,12 +93,31 @@
 <style lang="scss" scoped>
   @import '../theme';
 
-  .list {
-    display: flex;
+  .mb180 {
+    margin-bottom: rem(180);
+  }
+
+  .mb20 {
+    margin-bottom: rem(20);
+  }
+
+  .student-home {
+    background-color: rgb(236,242,246);
+  }
+
+  .list-con {
+    // display: flex;
+    padding: rem(20) rem(25);
+    background: #fff;
   }
   
   .list-item {
-    width: 50%;
+    width: 47.5%;
+    margin-bottom: rem(20);
+    margin-right: rem(20);
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    display: inline-block;
   }
 
 </style>
