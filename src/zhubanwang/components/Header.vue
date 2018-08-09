@@ -12,9 +12,14 @@
           <img src="../images/phone.png" alt="phone" class="phone-icon">
           <span class="font">0316-5551555</span>
         </div>
-        <div class="wechat">
+        <div class="wechat" @click="showToolTip = !showToolTip">
           <img src="../images/WeChat.png" alt="wechat" class="wechat-icon">
           <span class="font">微信公众号</span>
+          <div class="tootip" v-if="showToolTip">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAACsCAYAAADmMUfYAAAABmJLR0QA/wD/AP+gvaeTAAAEZElEQVR4nO3dQW4jIRAF0PEo97+yZxv1wghRBXzPe1vH3W3nC1VIAa/3+/3+AyH+nn4AmCGwRBFYoggsUQSWKAJLFIElisASRWCJIrBEEViiCCxRBJYoAksUgSWKwBJFYIkisEQRWKL8VF/w9XpVX/Kj2SVpz+cbvX/086PP271kbvb+t/9+RoywRBFYoggsUcpr2KfqGma2Bhv9/KhG7X7+6hpz9nlP/35mGWGJIrBEEViitNewT7M1zmqNtfr+1XnW2Zp19nrVdv9+ZhlhiSKwRBFYomyvYW83W3Punscdma2J0xhhiSKwRBFYonxdDds9T7la01b31+7ubz3NCEsUgSWKwBJlew3bPS+4usZr9PponnW1Bj3dO3H7vK0RligCSxSBJUp7Dbt7nrB6HrS65rzt+dLmcY2wRBFYoggsUV7v2yfeJt227n+keh5WPyxcRGCJIrBEuW5fgtPzhrP9rrPvn3W6v/a2GtgISxSBJYrAEqX9jIPV/tHTNdXq885ef6T7+6juTXDGAf81gSWKwBKlvZeguz9z9Xq79/ivPudrd43f3S88YoQlisASRWCJsv2s2dV52u5eg9WacvWcrN3Pv/o3w+41YUZYoggsUQSWKNet6apec7V7DVf38++edz7dy/FkhCWKwBJFYIly/IyD6r2qdvejzl5/tZ+2ut84jRGWKAJLFIElyvY1Xd3/Kx85vR/rbfOgaTWuEZYoAksUgSVK3Jqu29fNj+5Xbfd+srvXyD0ZYYkisEQRWKJsX9M1sro/6+h5Tv+vvbtGvL1mXmWEJYrAEkVgiVJew3bXiN3zrN1rwlZ7D7r3Hag+M6GaEZYoAksUgSXKded0PXX3DuyuEVf7ZXefaTDL/rDwi8ASRWCJcl0vweh6q/Oqs9fv/jwj3WvIuvdxqGaEJYrAEkVgidI+D9u9D8BI9xqx23oPqnsBur+/WUZYoggsUQSWKNftDzt6vXpesfr+p/tvZ++3+/2rjLBEEViiCCxR2td0jV6/bZ7vtnX/q/syPFXve7C7pjXCEkVgiSKwRGmfh11dU1V9xsDI6T3/qz9v9fdzem8yIyxRBJYoAkuU8jMO0vZjnVXd7zp7/d3zxLedeWCEJYrAEkVgiXK8l6DabH/rU3c/a/feXaPrjczOg6/eb5YRligCSxSBJcr1e2uNnO5fHTm9BuqpuibVDwsfCCxRBJYo2/fWWrX7nKrR9bvdtr/r6f1kjbBEEViiCCxR4s7pmtW9P+ru3oXqmrz6/XoJ4BeBJYrAEuX4/rDVTtdsp8/1etp9JkI3IyxRBJYoAkuUr6thR7rnZWfv3221Br2tn9cISxSBJYrAEmV7DdtdE63WnN1n487WlNV7W1XPUztrFj4QWKIILFG2n3Hw7brPwdrdXztbU+uHhV8EligCS5TyMw6gkxGWKAJLFIElisASRWCJIrBEEViiCCxRBJYoAksUgSWKwBJFYIkisEQRWKIILFEEligCSxSBJco/6R29idWJFXcAAAAASUVORK5CYII="
+              alt="">
+            <p>扫一扫关注驻班网</p>
+          </div>
         </div>
         <img src="../images/close.png" alt="退出登录" class="exit" @click="exit">
       </div>
@@ -37,6 +42,7 @@
     },
     data() {
       return {
+        showToolTip: false,
       }
     },
     methods: {
@@ -80,6 +86,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+    }
+
+    .tootip {
+      position: absolute;
+      top: rem(55);
+      left: rem(1);
+      text-align: center;
+      box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+    }
+    .tootip img {
+      width: 2.48rem;
+    }
+    .tootip p {
+      font-size: 0.23rem;
+      color: black;
+      line-height: 0.23rem;
+      padding-bottom: 0.2rem;
     }
 
     .phone {

@@ -1,8 +1,11 @@
 <template>
   <footer>
-    <div class="foot_icon" v-for="(item,index) in footList" :key="index">
-      <img class="icon" :src="item.imgUrl"/>
-      <span class="font">{{item.font}}</span>
+    <div class="foot_icon" v-for="(item,itemIndex) in footList" :key="itemIndex">
+      <span>{{item.i,index,item.i+1 === index}}</span>
+      <img class="icon" v-if="itemIndex+1 === index" :src="item.checkedImageUrl"/>
+      <img class="icon" v-else :src="item.imgUrl"/>
+      <span class="font blue" v-if="itemIndex+1 === index">{{item.font}}</span>
+      <span class="font" v-else>{{item.font}}</span>
     </div>
   </footer>
 </template>
@@ -79,7 +82,7 @@
     align-items: center;
     justify-content: space-around;
     background: #fff;
-    padding: rem(14) 0;
+    padding: rem(8) 0;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -92,11 +95,15 @@
       flex-direction: column;
     }
 
+    .blue {
+      color: rgb(51,170,255) !important;
+    }
+
     .icon {
       display: inline-block;
       width: rem(30);
       height: rem(30);
-      margin-bottom: rem(11);
+      margin-bottom: rem(7);
     }
 
     .font {

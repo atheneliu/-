@@ -33,6 +33,8 @@
         </div>
       </section>
 
+      <section class="blank"></section>
+
       <Footer :index="1" slot="tabbar" />
     </yd-layout>
   </div>
@@ -153,9 +155,13 @@
     max-width: 100%;
   }
 
+  #scrollView {
+    background: pink;
+  }
+
   .yd-scrollview {
-    margin-bottom: rem(40);
-    padding-bottom: rem(50);
+    margin-bottom: rem(40) !important;
+    padding-bottom: rem(50) !important;
   }
 
   .clearfix:after {
@@ -189,7 +195,7 @@
   }
 
   .mb20 {
-    margin-bottom: rem(20);
+    margin-bottom: rem(10);
   }
 
   .student-home {
@@ -211,6 +217,12 @@
 
   .list-item-wrapper:nth-of-type(odd) {
     margin-right: rem(20);
+  }
+
+  .blank{
+    width: 100%;
+    height: 1rem;
+    background-color: #ecf2f6;
   }
 
 </style>
