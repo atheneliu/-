@@ -35,6 +35,8 @@
 
 <style lang="scss">
   @import './theme';
+  @import url("//unpkg.com/element-ui@2.4.5/lib/theme-chalk/index.css");
+
 
   html {
     height: 100%;

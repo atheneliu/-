@@ -2,7 +2,12 @@
   <div class="student-home">
     <yd-layout>
       <Header :userInfo="userInfo" slot="navbar" />
-      <div class="banner">
+      <div class="carousel mb20">
+        <el-carousel :interval="4000" type="card" height="275px">
+          <el-carousel-item v-for="(item,index) in scrollList" :key="index">
+            <div class="carousel-img" :style="{backgroundImage: 'url(' + item.picUrl + ')'}"></div>
+          </el-carousel-item>
+        </el-carousel>
       </div>
       <section class="list-con mb20">
         <section-header title="图文模块一" :icon="sectionHeaderIcon" />
@@ -211,7 +216,7 @@
     width: rem(420);
     margin: rem(10) rem(0);
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
+    // border-radius: 7px;
     display: inline-block;
   }
 
@@ -223,6 +228,39 @@
     width: 100%;
     height: 1rem;
     background-color: #ecf2f6;
+  }
+
+  // banner
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+  }
+  
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
+
+  .carousel-img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 13px solid #fff;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel{
+    background: #fff;
+    padding-top: 20px;
   }
 
 </style>

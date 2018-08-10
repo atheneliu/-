@@ -32,6 +32,7 @@ const Home = () => import('../pages/Home')
 const StudentHome = () => import('../pages/StudentHome')
 const Counter = () => import('../pages/Counter')
 const Temp = () => import('../pages/Temp')
+const Test = () => import('../pages/test')
 
 
 Vue.use(Router)
@@ -53,6 +54,10 @@ const routes = [{
   path: '/zhubanwang/student',
   name: 'StudentHome',
   component: StudentHome,
+}, {
+  path: '/zhubanwang/test',
+  name: 'Test',
+  component: Test,
 }]
 
 export default new Router({

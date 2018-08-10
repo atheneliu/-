@@ -3,6 +3,7 @@
 import 'ress' // eslint-disable-line
 import 'animate.css/animate.min.css'
 import 'vue-ydui/dist/ydui.base.css'
+import ElementUI from 'element-ui'
 import { Button } from 'vue-ydui/dist/lib.rem/button'
 import { CellGroup, CellItem } from 'vue-ydui/dist/lib.rem/cell'
 import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog'
@@ -17,6 +18,8 @@ import store from './store'
 FastClick.attach(document.body)
 Vue.config.productionTip = false
 sync(store, router)
+
+Vue.use(ElementUI)
 
 Vue.component(Button.name, Button)
 Vue.component(CellGroup.name, CellGroup)
