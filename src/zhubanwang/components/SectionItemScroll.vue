@@ -35,6 +35,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: rem(10);
   }
 
   .pic {
@@ -47,7 +48,7 @@ export default {
     color: rgb(51,51,51);
     font-size: 16px;
     height: rem(36);
-    margin-bottom: rem(15);
+    margin-bottom: rem(10);
   }
 </style>
 

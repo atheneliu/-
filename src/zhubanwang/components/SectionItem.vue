@@ -60,7 +60,7 @@ export default {
     color: rgb(153,153,153);
     font-size: 14px;
     height: rem(32);
-    margin-bottom: rem(20);
+    margin-bottom: rem(10);
   }
 </style>
 
