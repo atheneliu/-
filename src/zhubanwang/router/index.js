@@ -30,6 +30,8 @@ const actionTypePlugin = {
 
 const Home = () => import('../pages/Home')
 const StudentHome = () => import('../pages/StudentHome')
+const TeacherHome = () => import('../pages/TeacherHome')
+const QuestionBank = () => import('../pages/QuestionBank')
 const Counter = () => import('../pages/Counter')
 const Temp = () => import('../pages/Temp')
 const Test = () => import('../pages/test')
@@ -54,6 +56,14 @@ const routes = [{
   path: '/zhubanwang/student',
   name: 'StudentHome',
   component: StudentHome,
+}, {
+  path: '/zhubanwang/teacher',
+  name: 'TeacherHome',
+  component: TeacherHome,
+}, {
+  path: '/zhubanwang/teacher/question',
+  name: 'QuestionBank',
+  component: QuestionBank,
 }, {
   path: '/zhubanwang/test',
   name: 'Test',

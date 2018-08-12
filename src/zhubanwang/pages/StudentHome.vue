@@ -253,7 +253,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
     border: 13px solid #fff;
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
   }

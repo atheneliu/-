@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import { Button } from 'vue-ydui/dist/lib.rem/button'
 import { CellGroup, CellItem } from 'vue-ydui/dist/lib.rem/cell'
 import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog'
+import { Search } from 'vue-ydui/dist/lib.rem/search'
 import { Layout } from 'vue-ydui/dist/lib.rem/layout'
 import FastClick from 'fastclick'
 import Vue from 'vue'
@@ -21,6 +22,7 @@ sync(store, router)
 
 Vue.use(ElementUI)
 
+Vue.component(Search.name, Search)
 Vue.component(Button.name, Button)
 Vue.component(CellGroup.name, CellGroup)
 Vue.component(CellItem.name, CellItem)

@@ -15,6 +15,22 @@ app.use(responseTime((req, res, time) => logger.info('response time:', req.metho
 app.use('/check/health', (req, res) => res.status(200).end())
 app.use('/api', proxy({ target: config.apiDomain, changeOrigin: true }))
 
+app.get('/hello', (req, res) => {
+  res.send('Hello World!')
+})
+
+// 表格分页数据mock接口
+app.get('/table/list', (req, res) => {
+  const { pageIndex, pageSize } = req.query
+  const tableList = []
+  for (let index = 0; index < 100; index++) {
+    tableList.push({ name: 'paper', number: 2, id: index })
+  }
+  res.json({
+    data: tableList.slice(pageSize * pageIndex, pageSize * (pageIndex + 1)),
+  })
+})
+
 app.use(compression({ level: 9 }))
 // history fallback
 app.use(history({

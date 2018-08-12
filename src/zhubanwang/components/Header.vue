@@ -3,11 +3,7 @@
     <header>
       <img src="https://www.xingshulin.com/common/images/logo.svg" alt="驻班网" class="icon">
       <div class="con">
-        <div class="user">
-          <img :src="userInfo.userPic" alt="头像" class="user-pic">
-          <span class="name-font">{{userInfo.userName}}</span>
-          <span class="font">{{`（${userInfo.userGrade}级 ${userInfo.userClass}班）`}}</span>
-        </div>
+        <user-info :userInfo="userInfo"/>
         <div class="phone">
           <img src="../images/phone.png" alt="phone" class="phone-icon">
           <span class="font">0316-5551555</span>
@@ -30,6 +26,8 @@
 </template>
 
 <script>
+  import UserInfo from '@/zhubanwang/components/UserInfo'
+
   export default {
     name: 'Header',
     props: {
@@ -44,6 +42,9 @@
       return {
         showToolTip: false,
       }
+    },
+    components: {
+      UserInfo,
     },
     methods: {
       exit() {
@@ -75,12 +76,6 @@
     align-items: center;
     width: rem(500);
     justify-content: space-between;
-
-    .user {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
     .wechat {
       display: flex;
