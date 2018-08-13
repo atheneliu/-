@@ -4,8 +4,14 @@
     <div class="center">
       <div class="con-dody">
         <div class="table-header">
-          <yd-search v-model="value1" :on-submit="submitHandler" placeholder="请输入查询的试卷名称"></yd-search>
-          <el-button type="primary" round>搜索</el-button>
+          <div class="header">
+            <span class="rect"></span>
+            <span class="title">题库组卷</span>
+          </div>
+          <div class="search">
+            <yd-search v-model="value1" :on-submit="submitHandler" cancel-text="" placeholder="请输入查询的试卷名称"></yd-search>
+            <el-button type="primary" round>搜索</el-button>
+          </div>
         </div>
         <div class="white-bg">
           <div class="table">
@@ -67,7 +73,6 @@
           </div>
           <div class="page">
             <el-pagination
-              @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
               :current-page.sync="currentPage3"
               background
@@ -183,16 +188,16 @@
       PCFooter,
     },
     methods: {
-      handleSizeChange() {
-        console.log('handleSizeChange-->')
-      },
       handleCurrentChange() {
+        // 当前页面变化 获取对应页码数据
         console.log('handleCurrentChange-->')
       },
       handleView(index, row) {
+        // 预览该试卷
         console.log('handleView-->', index, row)
       },
       handleAdd(index, row) {
+        // 添加
         console.log('handleAdd-->', index, row)
       },
     },
@@ -218,11 +223,36 @@
 
     .table-header {
       width: 100%;
-      background: pink;
-      margin: rem(17) 0rem;
+      margin: rem(35) 0rem rem(17);
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .rect {
+        width: 0.1rem;
+        height: 0.4rem;
+        display: inline-block;
+        background: #33aaff;
+        margin-right: 0.2rem;
+      }
+
+      .title {
+        font-size: 20px;
+        color: rgb(51,51,51);
+        font-size: bold;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .page {
@@ -275,5 +305,34 @@
     color: rgb(51,51,51) !important;
     font-size: 16px!important;
     font-weight: bold !important;
+  }
+
+  .yd-search-input {
+    border: none;
+    padding: 0;
+    position: relative;
+    display: flex;
+    font-size: 14px;
+    width: 4.5rem;
+    border-radius: 30%;
+    background: #f5f5f5;
+    color: rgb(153,153,153);
+  }
+
+  .yd-search-input::before {
+    border: none;
+  }
+
+  .yd-search-input::after {
+    border: none;
+  }
+  .yd-search-input >.search-input {
+    width: 100%;
+    height: 0.65rem;
+    background-color: #f5f5f5;
+    margin-right: 10px;
+    padding-top: 1px;
+    overflow: hidden;
+    border: 1px solid rgb(221,221,221);
   }
 </style>

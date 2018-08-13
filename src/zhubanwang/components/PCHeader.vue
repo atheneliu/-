@@ -13,12 +13,13 @@
           </el-submenu>
           <el-menu-item index="3">阅卷</el-menu-item>
           <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">班级学情</a></el-menu-item>
-          <el-menu-item index="3">咨询管理</el-menu-item>
-          <el-menu-item index="3">个人信息</el-menu-item>
+          <el-menu-item index="5">咨询管理</el-menu-item>
+          <el-menu-item index="6">个人信息</el-menu-item>
         </el-menu>
         <!-- <div class="line"></div> -->
       </div>
       <user-info :userInfo="userInfo"/>
+      <img src="./img/close.png" alt="退出登录" class="exit" @click="exit">
     </div>
   </div>
 </template>
@@ -49,6 +50,9 @@
       handleSelect(key, keyPath) {
         console.log(key, keyPath)
       },
+      exit() {
+        console.log('exit')
+      },
     },
   }
 </script>
@@ -62,6 +66,8 @@
     justify-content: space-between;
     padding: 0 rem(53);
     background: #fff;
+    font-size: 14px;
+    min-width: 1024px;
 
     .icon {
       width: rem(98);
@@ -70,10 +76,19 @@
 
     .left {
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav {
       margin-right: rem(38);
+    }
+
+    .exit {
+      display: inline-block;
+      width: rem(18);
+      height: rem(18);
+      margin-left: rem(10);
     }
   }
 </style>
