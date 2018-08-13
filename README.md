@@ -54,3 +54,25 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 >直接使用的ydui的rem, ydui中的组件都是以设计稿750px来做的, 如果自己的设计稿是375px, 那么只需要在对应项目的`theme.sass`文件中将`$docWidth`改为375即可, 页面中直接使用`rem(16)`就对应着375px的设计图中的16px值
 >如果使用ydui, `main.js`中不用引`import 'vue-ydui/dist/ydui.rem.css'`
 
+## 上线脚本 pub
+
+export identifyFile="~/.ssh/id_rsa_aliyun"
+alias ssh="ssh -i ${identifyFile} -o StrictHostKeyChecking=no"
+alias scp="scp -i ${identifyFile} -o StrictHostKeyChecking=no"
+
+# BUILD && PUSH
+npm i --registry=http://cnpm.xingshulin.com && npm run build-test \
+&& docker build -t 项目的docker镜像地址 . && docker push 项目的docker镜像地址
+
+############## 192.168.00.00 ###########
+服务器地址
+# PULL
+ssh suoper@192.168.00.00 'docker pull 项目的docker镜像地址'
+
+# STOP
+ssh suoper@192.168.00.00 'docker stop 项目名 && docker rm 项目名'
+
+# RUN
+ssh suoper@192.168.00.00 'docker run -d -p 9856:9856 --name 项目名 -v /logs/项目名:/logs/项目名 -e NODE_ENV=test --net=host 项目的docker镜像地址'
+
+
